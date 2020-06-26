@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
       text: 'Your order is on the way!',
     });
     this.info.reset();
-    window.location.reload();
+    window.location.href = "index.html"
   } else {
     Swal.fire({
       icon: 'error',
