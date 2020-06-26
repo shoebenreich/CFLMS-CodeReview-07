@@ -1,0 +1,9 @@
+<div class="container d-flex flex-wrap justify-content-between row m-auto">
+    <div class="card col-lg-5 mb-5" *ngFor="let trip of trips; index as id">
+        <h3>{{trip.destination}}</h3>
+        <h5>{{trip.shortText}}</h5>
+        <div class="d-flex">
+        <a [routerLink]="['/trips', id]"><img src="{{trip.img}}" alt="{{trip.destination}}" class="border rounded" style="width: 100%;"></a>
+    </div>
+    </div>
+</div>

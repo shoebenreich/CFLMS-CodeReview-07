@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="container border border-black rounded">
+    <h4 class="display-5 py-3 text-center">Our Trip to Graz</h4>
+    <p class="text-right text-muted mb-5">Sanja, 2020-04-03</p>
+    <img src="https://cdn.pixabay.com/photo/2018/01/29/21/10/road-3117232_960_720.jpg" alt="Graz Herrengasse" class="mb-5">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Quo laboriosam, ducimus consectetur, quod facilis eligendi hic harum ratione omnis asperiores excepturi iure enim distinctio fugiat veniam illum odio? Totam veritatis itaque quibusdam repellat alias vel eveniet molestias iusto eos maiores esse odit numquam, temporibus cumque voluptatem quo quis sunt dolor magni, porro qui error! Corporis odio non magnam obcaecati ullam saepe distinctio totam odit, culpa officia veniam quis deleniti amet ipsa assumenda repellendus dicta ipsum architecto consequuntur error harum nulla molestias ea. Suscipit quas minima, molestias libero non maiores autem, odio voluptates similique ullam excepturi eum. Corrupti ab cumque omnis laudantium sequi deleniti velit totam facere accusamus ipsa numquam non veritatis illo, eum esse ad? Beatae, illum adipisci nisi iste commodi officia aliquid! Amet quisquam quas harum molestiae voluptas obcaecati, accusantium animi suscipit? Adipisci culpa, numquam tenetur sapiente blanditiis ipsam laborum quibusdam perferendis a dolor dicta alias explicabo provident beatae perspiciatis iure dolorum at, ducimus veritatis quis veniam tempora recusandae! Commodi natus vel dolorum dignissimos nulla dolor fuga esse nobis nisi sed id repellat perspiciatis eligendi repellendus voluptas quod recusandae accusamus, porro unde. Ipsum esse, voluptatum ea rem, illo, autem aliquam nostrum doloribus unde dolore quasi laudantium non distinctio. <br>Officiis voluptate aliquam atque pariatur? Quisquam voluptate dolore laborum, porro ab iure vel ea exercitationem ex minus, perspiciatis ipsum neque excepturi molestiae? Sed, dolorem. Consequatur incidunt soluta vel accusamus sapiente, possimus, porro omnis rerum magni eos temporibus quisquam deserunt animi provident expedita sint sed numquam quod sunt iusto architecto cum debitis neque suscipit. Sapiente quaerat sint reiciendis fugit dolores odit ut beatae dolorum consectetur in iste unde modi officia harum, asperiores fuga ea? Voluptatum vero consequuntur exercitationem sunt. Exercitationem quos eum, libero debitis, placeat temporibus reprehenderit adipisci sit molestiae tenetur eaque est alias possimus et, neque numquam laboriosam repellat eos vitae.
+    </p>
+    </div>
+    <div class="col-lg-12 border border-black rounded my-3" *ngFor="let i of array">
+        <h2 class="h2 text-center mb-5">{{i.dest}}</h2>
+        <img src="../../assets/{{i.image}}" style="width: 100%;">
+        <p class="text-right">{{i.name }}, {{ i.visited }}</p>
+        <p>{{i.text}}</p>
+      </div>
+      <svg class="bi bi-plus-circle m-5" (click)='clickPlus()' width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      </svg>
+    <ng-template [ngIf]="clicked ===true">
+        <h4>New Blog entry</h4>
+
+        <form [formGroup]="blog" (ngSubmit)="addBlog()">
+          <div class="form-group">
+            <label>Your name:*</label>
+            <input type="name" class="form-control" id="exampleInputEmail1" formControlName="name">
+          </div>
+
+          <div class="form-group">
+            <label>Visited Destination:*</label>
+            <input type="text" class="form-control" id="" formControlName="dest">
+          </div>
+
+          <div class="form-group">
+              <label>Visited Date:*</label>
+              <input type="date" class="form-control" id="" formControlName="visited">
+            </div>
+
+            <div class="form-group">
+              <label>Image Path:*</label>
+              <input type="text" class="form-control" id="" formControlName="image">
+            </div>
+
+            <div class="form-group">
+              <label>Your Text:*</label>
+              <textarea type="text" class="form-control textarea" id="" formControlName="text"></textarea>
+            </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </ng-template>
+</div>

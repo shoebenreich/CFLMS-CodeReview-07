@@ -1,0 +1,49 @@
+<ng-template [ngIf]="fullCart" [ngIfElse]="empty">
+    <div class="container">
+        <table class="table table-stripped">
+            <thead class="thead-dark">
+              <tr class="row">
+                <th class="col-lg-2">Article</th>
+                <th class="col-lg-8">Description</th>
+                <th class="col-lg-2">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr class="row" *ngFor="let trip of trips; index as id">
+                    <td class="col-lg-2"><img class="p-0 w-100" src="{{trip.img}}" alt="{{trip.destination}}"></td>
+                    <td class="col-lg-8">{{trip.destination}}<br>{{trip.shortText}}<br>Date: {{trip.when}}</td>
+                    <td class="col-lg-2">€ {{trip.price}}</td>
+                  </tr>
+            </tbody>
+            <tfoot>
+                <tr class="row">
+                    <td class="col-lg-8">Total Price:</td>
+                    <td class="col-lg-4">{{totalCost}}</td>
+                </tr>
+            </tfoot>
+          </table>
+    </div>
+    <div class="container">
+      <form [formGroup]="info" (ngSubmit)="purchase()">
+        <div class="form-group">
+          <label>Your name:*</label>
+          <input type="name" class="form-control" formControlName="name">
+        </div>
+    
+        <div class="form-group">
+          <label>Email:*</label>
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label>Adress:*</label>
+            <input type="text" class="form-control" formControlName="adress">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+</ng-template>
+  <ng-template #empty>
+    <div class="border container text-muted d-flex align-items-center justify-content-center" style="height: 15vw;">
+      <p class="h4 p-5">Nothing added to cart</p>
+    </div>
+  </ng-template>

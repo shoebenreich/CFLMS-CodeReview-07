@@ -1,0 +1,8 @@
+.jumbotron {
+    height: 30vw;
+    background-image: url(../../assets/jumbo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}

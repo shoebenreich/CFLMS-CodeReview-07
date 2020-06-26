@@ -1,0 +1,20 @@
+<h4 class="display 3 text-center">Come talk to us!</h4>
+
+<div class="container">
+<form [formGroup]="contact" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Your name:*</label>
+      <input type="name" class="form-control" id="exampleInputEmail1" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label>Email:*</label>
+      <input type="text" class="form-control" id="" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>Your Text:*</label>
+        <textarea type="text" class="form-control textarea" id="" formControlName="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
